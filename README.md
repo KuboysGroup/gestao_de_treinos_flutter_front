@@ -1,16 +1,8 @@
 # gestao_de_treinos_flutter_front
 
-A new Flutter project.
+Frontend do gestão de treinos
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Para rodar o frontend é necessário instalar o flutter no computador.
+Depois, no diretório do projeto, rodar o comando: flutter run -d chrome --web-browser-flag "--disable-web-security"
