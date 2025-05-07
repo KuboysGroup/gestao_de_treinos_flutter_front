@@ -22,8 +22,8 @@ class EditarExercicioView extends HookConsumerWidget {
         final response =
             await ExerciciosRequests.excluirExercicio(exercicio.id!);
         if (response != 200) {
-          showTostification(context, ToastificationType.error, 'Ops :(',
-              'Erro ao excluir exercício');
+          showTostification(context, ToastificationType.error, 'Erro',
+              'Exercício faz parte de um treino');
         } else {
           ref
               .read(exerciciosStateProvider.notifier)
@@ -33,8 +33,8 @@ class EditarExercicioView extends HookConsumerWidget {
               context, ToastificationType.success, 'Exercício excluído!', '');
         }
       } catch (e) {
-        showTostification(context, ToastificationType.error, 'Ops :(',
-            'Erro ao excluir exercício');
+        showTostification(context, ToastificationType.error, 'Erro',
+            'Exercício faz parte de um treino');
       }
     }
 

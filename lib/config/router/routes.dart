@@ -1,6 +1,7 @@
 import 'package:gestao_de_treinos_flutter_front/models/usuario.dart';
 import 'package:gestao_de_treinos_flutter_front/screens/authentication/login_screen.dart';
 import 'package:gestao_de_treinos_flutter_front/screens/aluno/avaliacoes_fisicas/avaliacoes_screen.dart';
+import 'package:gestao_de_treinos_flutter_front/screens/instrutor/associar_treinos/associar_treinos.dart';
 import 'package:gestao_de_treinos_flutter_front/screens/instrutor/criar_avaliacoes_fisicas/criar_avaliacoes.dart';
 import 'package:gestao_de_treinos_flutter_front/screens/instrutor/criar_exercicios/criar_exercicios.dart';
 import 'package:gestao_de_treinos_flutter_front/screens/home/home.dart';
@@ -37,6 +38,12 @@ final List<GoRoute> router = [
     GoRoute(
       path: 'criar_treinos',
       builder: (context, state) => CriarTreinos(
+        usuario: state.extra as Usuario,
+      ), //Trocar
+    ),
+    GoRoute(
+      path: 'associar',
+      builder: (context, state) => AssociarTreinos(
         usuario: state.extra as Usuario,
       ), //Trocar
     ),

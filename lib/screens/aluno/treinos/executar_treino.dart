@@ -30,7 +30,13 @@ class ExecutarTreino extends HookConsumerWidget {
                 ...treino.exercicios.map((exercicio) {
                   return CheckboxListTile(
                       title: Text(exercicio.exercicio!.nome),
-                      subtitle: Text('Repetições: ${exercicio.repeticoes}'),
+                      subtitle: Row(
+                        spacing: 10,
+                        children: [
+                          Text('Séries: ${exercicio.series}'),
+                          Text('Repetições: ${exercicio.repeticoes}'),
+                        ],
+                      ),
                       value: exercicio.concluido,
                       activeColor: Colors.orangeAccent,
                       onChanged: (value) async {

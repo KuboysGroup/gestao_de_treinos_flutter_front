@@ -33,6 +33,10 @@ class HomeScreen extends HookConsumerWidget {
       context.go('/criar_treinos', extra: user);
     }
 
+    void goToAssociar(BuildContext context, Usuario user) {
+      context.go('/associar', extra: user);
+    }
+
     return Scaffold(
       appBar: AppBar(
         actions: [
@@ -233,6 +237,32 @@ class HomeScreen extends HookConsumerWidget {
                                                   BorderRadius.circular(50.0)),
                                           child: const Icon(
                                             FluentIcons.document_24_regular,
+                                            color: Colors.white,
+                                          ),
+                                        ),
+                                        trailing: const Icon(FluentIcons
+                                            .chevron_right_24_regular),
+                                      ),
+                                      ListTile(
+                                        onTap: () =>
+                                            goToAssociar(context, usuario),
+                                        title: const Text('Associar treinos'),
+                                        subtitle: const Text(
+                                            'Associe treinos personalizados aos seus alunos'),
+                                        contentPadding:
+                                            const EdgeInsets.symmetric(
+                                                horizontal: 32.0,
+                                                vertical: 6.0),
+                                        leading: Container(
+                                          width: 48,
+                                          height: 48,
+                                          decoration: BoxDecoration(
+                                              color: Colors.orangeAccent,
+                                              borderRadius:
+                                                  BorderRadius.circular(50.0)),
+                                          child: const Icon(
+                                            FluentIcons
+                                                .textbox_settings_24_regular,
                                             color: Colors.white,
                                           ),
                                         ),
