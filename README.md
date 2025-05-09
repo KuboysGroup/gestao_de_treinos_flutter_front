@@ -15,6 +15,7 @@ Antes de rodar o projeto, você precisa ter o seguinte instalado:
 -- Um editor como o VS Code ou Android Studio
 
 ⚙️ Como rodar o projeto localmente
+
   1 .Clone este repositório:
   -- git clone https://github.com/seu-usuario/gestao_de_treinos_flutter_front.git
   -- cd gestao_de_treinos_flutter_front
