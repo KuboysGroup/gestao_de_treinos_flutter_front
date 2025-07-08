@@ -72,7 +72,7 @@ class EditarExercicioView extends HookConsumerWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text('Grupo Muscular'),
-                        Text(exercicio.grupoMuscular!.nome,
+                        Text(exercicio.nomeGrupoMuscular,
                             style: TextStyle(color: Colors.grey))
                       ],
                     ),

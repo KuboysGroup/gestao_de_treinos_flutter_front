@@ -37,7 +37,7 @@ class TreinosRequests {
   }
 
   static Future<Treino> atualizarTreino(
-      int id, Map<String, dynamic> treino) async {
+      String id, Map<String, dynamic> treino) async {
     try {
       var response = await ApiRest().put('/treino/$id', treino);
       if (response.statusCode == 200) {
@@ -61,7 +61,7 @@ class TreinosRequests {
     }
   }
 
-  static Future<int> excluirTreino(int id) async {
+  static Future<int> excluirTreino(String id) async {
     var response = await ApiRest().delete('/treino/$id');
 
     if (response.statusCode >= 200 && response.statusCode < 300) {

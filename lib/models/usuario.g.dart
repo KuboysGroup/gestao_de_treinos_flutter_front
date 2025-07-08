@@ -8,14 +8,14 @@ part of 'usuario.dart';
 
 _$UsuarioImpl _$$UsuarioImplFromJson(Map<String, dynamic> json) =>
     _$UsuarioImpl(
-      id: (json['id'] as num?)?.toInt() ?? 0,
+      id: json['id'] as String? ?? "",
       nome: json['nome'] as String? ?? "",
       email: json['email'] as String? ?? "",
       senha: json['senha'] as String? ?? "",
       dataNascimento: json['dataNascimento'] as String? ?? "",
       perfil: json['perfil'] as String? ?? "",
       treinos: (json['treinos'] as List<dynamic>?)
-              ?.map((e) => Treino.fromJson(e as Map<String, dynamic>))
+              ?.map((e) => AlunoTreino.fromJson(e as Map<String, dynamic>))
               .toList() ??
           const [],
     );

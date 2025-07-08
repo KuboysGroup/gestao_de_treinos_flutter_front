@@ -105,7 +105,7 @@ class CriarTreinos extends HookConsumerWidget {
                                         ...treino.exercicios.map((exercicio) {
                                           return ListTile(
                                             title:
-                                                Text(exercicio.exercicio!.nome),
+                                                Text(exercicio.nomeExercicio),
                                             subtitle: Column(
                                               crossAxisAlignment:
                                                   CrossAxisAlignment.start,
@@ -136,14 +136,11 @@ class CriarTreinos extends HookConsumerWidget {
                                                   try {
                                                     final novaLista = treino
                                                         .exercicios
-                                                        .where(
-                                                            (treinoExercicio) =>
-                                                                treinoExercicio
-                                                                    .exercicio
-                                                                    ?.id !=
-                                                                exercicio
-                                                                    .exercicio
-                                                                    ?.id)
+                                                        .where((treinoExercicio) =>
+                                                            treinoExercicio
+                                                                .idExercicio !=
+                                                            exercicio
+                                                                .idExercicio)
                                                         .toList();
                                                     final treinoAtualizado =
                                                         treino.copyWith(
@@ -152,29 +149,34 @@ class CriarTreinos extends HookConsumerWidget {
 
                                                     Map<String, dynamic>
                                                         treinoRequisicao = {
-                                                      'nomeTreino': treino.nome,
-                                                      'idInstrutor': treino
-                                                              .instrutor?.id ??
-                                                          null,
-                                                      "exercicios":
-                                                          treinoAtualizado
-                                                              .exercicios
-                                                              .where((e) =>
-                                                                  e.exercicio !=
-                                                                      null &&
-                                                                  e.exercicio!
-                                                                          .id !=
-                                                                      null)
-                                                              .map((e) => {
-                                                                    "idExercicio":
-                                                                        e.exercicio!
-                                                                            .id,
-                                                                    "series": e
-                                                                        .series,
-                                                                    "repeticoes":
-                                                                        e.repeticoes,
-                                                                  })
-                                                              .toList(),
+                                                      "id": treino.id,
+                                                      'nome': treino.nome,
+                                                      'idInstrutor':
+                                                          treino.idInstrutor,
+                                                      "nomeInstrutor":
+                                                          treino.nomeInstrutor,
+                                                      "exercicios": treinoAtualizado
+                                                          .exercicios
+                                                          .where((e) =>
+                                                              e.idExercicio !=
+                                                                  null &&
+                                                              e.idExercicio !=
+                                                                  null)
+                                                          .map((e) => {
+                                                                "idExercicio": e
+                                                                    .idExercicio,
+                                                                "series":
+                                                                    e.series,
+                                                                "repeticoes": e
+                                                                    .repeticoes,
+                                                                "idTreino":
+                                                                    treino.id,
+                                                                "nomeExercicio":
+                                                                    e.nomeExercicio,
+                                                                "nomeGrupoMuscular":
+                                                                    e.nomeGrupoMuscular
+                                                              })
+                                                          .toList(),
                                                     };
                                                     await TreinosRequests
                                                         .atualizarTreino(
@@ -185,8 +187,8 @@ class CriarTreinos extends HookConsumerWidget {
                                                             treinosStateProvider
                                                                 .notifier)
                                                         .removerExercicio(
-                                                            exercicio.exercicio!
-                                                                .id!);
+                                                            exercicio
+                                                                .idExercicio!);
                                                     showTostification(
                                                       context,
                                                       ToastificationType

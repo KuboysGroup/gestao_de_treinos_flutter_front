@@ -57,8 +57,8 @@ class TreinosScreen extends HookConsumerWidget {
                                   tilePadding: const EdgeInsets.symmetric(
                                       vertical: 12.0),
                                   leading: CircularStepProgressIndicator(
-                                    totalSteps: treino.exercicios.length,
-                                    currentStep: treino.exercicios
+                                    totalSteps: treino.treino.exercicios.length,
+                                    currentStep: treino.treino.exercicios
                                         .where((ex) => ex.concluido)
                                         .length,
                                     stepSize: 10,
@@ -85,9 +85,9 @@ class TreinosScreen extends HookConsumerWidget {
                                               : Icon(Icons.check)),
                                     ),
                                   ),
-                                  title: Text(treino.nome),
+                                  title: Text(treino.treino.nome),
                                   subtitle: Text(
-                                      'Exercícios: ${treino.exercicios.length}'),
+                                      'Exercícios: ${treino.treino.exercicios.length}'),
                                   trailing: SizedBox(
                                     width: 200,
                                     child: Button(
@@ -113,7 +113,7 @@ class TreinosScreen extends HookConsumerWidget {
                                                     ),
                                                   ),
                                                   body: ExecutarTreino(
-                                                      treino: treino),
+                                                      treino: treino.treino),
                                                 ),
                                                 context: context,
                                               );
@@ -134,10 +134,10 @@ class TreinosScreen extends HookConsumerWidget {
                                               width: 200,
                                               child: Button(
                                                 onTap: () async {
-                                                  final exTotais =
-                                                      treino.exercicios.length;
+                                                  final exTotais = treino
+                                                      .treino.exercicios.length;
                                                   final exConcluidos = treino
-                                                      .exercicios
+                                                      .treino.exercicios
                                                       .where(
                                                           (treinoExercicio) =>
                                                               treinoExercicio
@@ -150,7 +150,7 @@ class TreinosScreen extends HookConsumerWidget {
                                                             usuarioStateProvider
                                                                 .notifier)
                                                         .marcarTreinoComoConcluido(
-                                                            treino.id);
+                                                            treino.treino.id);
                                                   }
                                                 },
                                                 type: ButtonType.elevated,

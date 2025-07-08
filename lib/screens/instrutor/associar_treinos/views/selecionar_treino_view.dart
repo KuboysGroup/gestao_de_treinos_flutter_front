@@ -2,11 +2,11 @@
 
 import 'package:flutter/material.dart';
 import 'package:gestao_de_treinos_flutter_front/helpers/toast.dart';
+import 'package:gestao_de_treinos_flutter_front/models/aluno_treino.dart';
 import 'package:gestao_de_treinos_flutter_front/models/usuario.dart';
 import 'package:gestao_de_treinos_flutter_front/screens/instrutor/associar_treinos/requests/associar_requests.dart';
 import 'package:gestao_de_treinos_flutter_front/screens/instrutor/associar_treinos/states/treinos_state.dart';
 import 'package:gestao_de_treinos_flutter_front/screens/instrutor/associar_treinos/states/usuarios_state.dart';
-import 'package:gestao_de_treinos_flutter_front/screens/instrutor/criar_exercicios/states/grupo_muscular_selecionado_state.dart';
 import 'package:gestao_de_treinos_flutter_front/utils/loading_data.dart';
 import 'package:gestao_de_treinos_flutter_front/utils/loading_data_error.dart';
 import 'package:go_router/go_router.dart';
@@ -61,29 +61,14 @@ class SelecionarTreinoView extends HookConsumerWidget {
                                   title: Text(treino.nome),
                                   onTap: () async {
                                     try {
-                                      final treinosAtualizados = [
-                                        ...user.treinos
-                                            .map((t) => {"id": t.id}),
-                                        {"id": treino.id}
-                                      ];
-
-                                      // Monta o objeto de requisição
-                                      Map<String, dynamic> usuarioRequest = {
-                                        "nome": user.nome,
-                                        "email": user.email,
-                                        "senha": user.senha,
-                                        "dataNascimento": user.dataNascimento,
-                                        "perfil": user.perfil,
-                                        "treinos": treinosAtualizados,
-                                      };
-
-                                      await AssociarRequests.atualizarTreino(
-                                          user.id!, usuarioRequest);
-
+                                      await AssociarRequests.associarTreino(
+                                          treino.id, user.id!, true);
+                                      AlunoTreino alunoTreino = AlunoTreino(
+                                          treino: treino, quantExecucoes: 0);
                                       ref
                                           .read(usuariosStateProvider.notifier)
                                           .adicionarTreinoAoUsuario(
-                                              treinoNovo: treino,
+                                              treinoNovo: alunoTreino,
                                               usuarioId: user.id!);
                                       context.pop();
                                       showTostification(

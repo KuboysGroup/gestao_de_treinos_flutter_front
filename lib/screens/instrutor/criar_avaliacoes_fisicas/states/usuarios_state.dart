@@ -11,7 +11,7 @@ class UsuariosState extends _$UsuariosState {
     return await AvaliacoesRequests.getUsuario();
   }
 
-  void removerAvaliacao(int id) {
+  void removerAvaliacao(String id) {
     state = state.whenData((avaliacoes) {
       return avaliacoes.where((avaliacao) => avaliacao.id != id).toList();
     });

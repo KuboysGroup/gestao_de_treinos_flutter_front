@@ -7,11 +7,11 @@ part 'avaliacoes_state.g.dart';
 @riverpod
 class AvaliacoesState extends _$AvaliacoesState {
   @override
-  Future<List<AvaliacaoFisica>> build(int id) async {
+  Future<List<AvaliacaoFisica>> build(String id) async {
     return await AvaliacoesRequests.getAvaliacoes(id);
   }
 
-  void removerAvaliacao(int id) {
+  void removerAvaliacao(String id) {
     state = state.whenData((avaliacoes) {
       return avaliacoes.where((avaliacao) => avaliacao.id != id).toList();
     });

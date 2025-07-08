@@ -8,7 +8,7 @@ part of 'grupo_muscular.dart';
 
 _$GrupoMuscularImpl _$$GrupoMuscularImplFromJson(Map<String, dynamic> json) =>
     _$GrupoMuscularImpl(
-      id: (json['id'] as num?)?.toInt() ?? 0,
+      id: json['id'] as String? ?? "",
       nome: json['nome'] as String? ?? "",
       exercicios: (json['exercicios'] as List<dynamic>?)
               ?.map((e) => Exercicio.fromJson(e as Map<String, dynamic>))

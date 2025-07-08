@@ -20,8 +20,10 @@ TreinoExercicio _$TreinoExercicioFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$TreinoExercicio {
-  Treino? get treino => throw _privateConstructorUsedError;
-  Exercicio? get exercicio => throw _privateConstructorUsedError;
+  String? get idTreino => throw _privateConstructorUsedError;
+  String? get idExercicio => throw _privateConstructorUsedError;
+  String get nomeExercicio => throw _privateConstructorUsedError;
+  String get nomeGrupoMuscular => throw _privateConstructorUsedError;
   int get series => throw _privateConstructorUsedError;
   int get repeticoes => throw _privateConstructorUsedError;
   bool get concluido => throw _privateConstructorUsedError;
@@ -39,14 +41,13 @@ abstract class $TreinoExercicioCopyWith<$Res> {
       _$TreinoExercicioCopyWithImpl<$Res, TreinoExercicio>;
   @useResult
   $Res call(
-      {Treino? treino,
-      Exercicio? exercicio,
+      {String? idTreino,
+      String? idExercicio,
+      String nomeExercicio,
+      String nomeGrupoMuscular,
       int series,
       int repeticoes,
       bool concluido});
-
-  $TreinoCopyWith<$Res>? get treino;
-  $ExercicioCopyWith<$Res>? get exercicio;
 }
 
 /// @nodoc
@@ -62,21 +63,31 @@ class _$TreinoExercicioCopyWithImpl<$Res, $Val extends TreinoExercicio>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? treino = freezed,
-    Object? exercicio = freezed,
+    Object? idTreino = freezed,
+    Object? idExercicio = freezed,
+    Object? nomeExercicio = null,
+    Object? nomeGrupoMuscular = null,
     Object? series = null,
     Object? repeticoes = null,
     Object? concluido = null,
   }) {
     return _then(_value.copyWith(
-      treino: freezed == treino
-          ? _value.treino
-          : treino // ignore: cast_nullable_to_non_nullable
-              as Treino?,
-      exercicio: freezed == exercicio
-          ? _value.exercicio
-          : exercicio // ignore: cast_nullable_to_non_nullable
-              as Exercicio?,
+      idTreino: freezed == idTreino
+          ? _value.idTreino
+          : idTreino // ignore: cast_nullable_to_non_nullable
+              as String?,
+      idExercicio: freezed == idExercicio
+          ? _value.idExercicio
+          : idExercicio // ignore: cast_nullable_to_non_nullable
+              as String?,
+      nomeExercicio: null == nomeExercicio
+          ? _value.nomeExercicio
+          : nomeExercicio // ignore: cast_nullable_to_non_nullable
+              as String,
+      nomeGrupoMuscular: null == nomeGrupoMuscular
+          ? _value.nomeGrupoMuscular
+          : nomeGrupoMuscular // ignore: cast_nullable_to_non_nullable
+              as String,
       series: null == series
           ? _value.series
           : series // ignore: cast_nullable_to_non_nullable
@@ -91,30 +102,6 @@ class _$TreinoExercicioCopyWithImpl<$Res, $Val extends TreinoExercicio>
               as bool,
     ) as $Val);
   }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $TreinoCopyWith<$Res>? get treino {
-    if (_value.treino == null) {
-      return null;
-    }
-
-    return $TreinoCopyWith<$Res>(_value.treino!, (value) {
-      return _then(_value.copyWith(treino: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ExercicioCopyWith<$Res>? get exercicio {
-    if (_value.exercicio == null) {
-      return null;
-    }
-
-    return $ExercicioCopyWith<$Res>(_value.exercicio!, (value) {
-      return _then(_value.copyWith(exercicio: value) as $Val);
-    });
-  }
 }
 
 /// @nodoc
@@ -126,16 +113,13 @@ abstract class _$$TreinoExercicioImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {Treino? treino,
-      Exercicio? exercicio,
+      {String? idTreino,
+      String? idExercicio,
+      String nomeExercicio,
+      String nomeGrupoMuscular,
       int series,
       int repeticoes,
       bool concluido});
-
-  @override
-  $TreinoCopyWith<$Res>? get treino;
-  @override
-  $ExercicioCopyWith<$Res>? get exercicio;
 }
 
 /// @nodoc
@@ -149,21 +133,31 @@ class __$$TreinoExercicioImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? treino = freezed,
-    Object? exercicio = freezed,
+    Object? idTreino = freezed,
+    Object? idExercicio = freezed,
+    Object? nomeExercicio = null,
+    Object? nomeGrupoMuscular = null,
     Object? series = null,
     Object? repeticoes = null,
     Object? concluido = null,
   }) {
     return _then(_$TreinoExercicioImpl(
-      treino: freezed == treino
-          ? _value.treino
-          : treino // ignore: cast_nullable_to_non_nullable
-              as Treino?,
-      exercicio: freezed == exercicio
-          ? _value.exercicio
-          : exercicio // ignore: cast_nullable_to_non_nullable
-              as Exercicio?,
+      idTreino: freezed == idTreino
+          ? _value.idTreino
+          : idTreino // ignore: cast_nullable_to_non_nullable
+              as String?,
+      idExercicio: freezed == idExercicio
+          ? _value.idExercicio
+          : idExercicio // ignore: cast_nullable_to_non_nullable
+              as String?,
+      nomeExercicio: null == nomeExercicio
+          ? _value.nomeExercicio
+          : nomeExercicio // ignore: cast_nullable_to_non_nullable
+              as String,
+      nomeGrupoMuscular: null == nomeGrupoMuscular
+          ? _value.nomeGrupoMuscular
+          : nomeGrupoMuscular // ignore: cast_nullable_to_non_nullable
+              as String,
       series: null == series
           ? _value.series
           : series // ignore: cast_nullable_to_non_nullable
@@ -184,8 +178,10 @@ class __$$TreinoExercicioImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$TreinoExercicioImpl implements _TreinoExercicio {
   _$TreinoExercicioImpl(
-      {this.treino,
-      this.exercicio,
+      {this.idTreino,
+      this.idExercicio,
+      this.nomeExercicio = "",
+      this.nomeGrupoMuscular = "",
       this.series = 0,
       this.repeticoes = 0,
       this.concluido = false});
@@ -194,9 +190,15 @@ class _$TreinoExercicioImpl implements _TreinoExercicio {
       _$$TreinoExercicioImplFromJson(json);
 
   @override
-  final Treino? treino;
+  final String? idTreino;
   @override
-  final Exercicio? exercicio;
+  final String? idExercicio;
+  @override
+  @JsonKey()
+  final String nomeExercicio;
+  @override
+  @JsonKey()
+  final String nomeGrupoMuscular;
   @override
   @JsonKey()
   final int series;
@@ -209,7 +211,7 @@ class _$TreinoExercicioImpl implements _TreinoExercicio {
 
   @override
   String toString() {
-    return 'TreinoExercicio(treino: $treino, exercicio: $exercicio, series: $series, repeticoes: $repeticoes, concluido: $concluido)';
+    return 'TreinoExercicio(idTreino: $idTreino, idExercicio: $idExercicio, nomeExercicio: $nomeExercicio, nomeGrupoMuscular: $nomeGrupoMuscular, series: $series, repeticoes: $repeticoes, concluido: $concluido)';
   }
 
   @override
@@ -217,9 +219,14 @@ class _$TreinoExercicioImpl implements _TreinoExercicio {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$TreinoExercicioImpl &&
-            (identical(other.treino, treino) || other.treino == treino) &&
-            (identical(other.exercicio, exercicio) ||
-                other.exercicio == exercicio) &&
+            (identical(other.idTreino, idTreino) ||
+                other.idTreino == idTreino) &&
+            (identical(other.idExercicio, idExercicio) ||
+                other.idExercicio == idExercicio) &&
+            (identical(other.nomeExercicio, nomeExercicio) ||
+                other.nomeExercicio == nomeExercicio) &&
+            (identical(other.nomeGrupoMuscular, nomeGrupoMuscular) ||
+                other.nomeGrupoMuscular == nomeGrupoMuscular) &&
             (identical(other.series, series) || other.series == series) &&
             (identical(other.repeticoes, repeticoes) ||
                 other.repeticoes == repeticoes) &&
@@ -229,8 +236,8 @@ class _$TreinoExercicioImpl implements _TreinoExercicio {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, treino, exercicio, series, repeticoes, concluido);
+  int get hashCode => Object.hash(runtimeType, idTreino, idExercicio,
+      nomeExercicio, nomeGrupoMuscular, series, repeticoes, concluido);
 
   @JsonKey(ignore: true)
   @override
@@ -249,8 +256,10 @@ class _$TreinoExercicioImpl implements _TreinoExercicio {
 
 abstract class _TreinoExercicio implements TreinoExercicio {
   factory _TreinoExercicio(
-      {final Treino? treino,
-      final Exercicio? exercicio,
+      {final String? idTreino,
+      final String? idExercicio,
+      final String nomeExercicio,
+      final String nomeGrupoMuscular,
       final int series,
       final int repeticoes,
       final bool concluido}) = _$TreinoExercicioImpl;
@@ -259,9 +268,13 @@ abstract class _TreinoExercicio implements TreinoExercicio {
       _$TreinoExercicioImpl.fromJson;
 
   @override
-  Treino? get treino;
+  String? get idTreino;
   @override
-  Exercicio? get exercicio;
+  String? get idExercicio;
+  @override
+  String get nomeExercicio;
+  @override
+  String get nomeGrupoMuscular;
   @override
   int get series;
   @override

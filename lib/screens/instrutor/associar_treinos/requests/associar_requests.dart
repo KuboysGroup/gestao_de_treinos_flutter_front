@@ -37,7 +37,7 @@ class AssociarRequests {
   }
 
   static Future<Usuario> atualizarTreino(
-      int id, Map<String, dynamic> usuario) async {
+      String id, Map<String, dynamic> usuario) async {
     try {
       var response = await ApiRest().put('/usuario/$id', usuario);
       if (response.statusCode == 200) {
@@ -52,6 +52,18 @@ class AssociarRequests {
     }
   }
 
+  static Future<int> associarTreino(
+      String idTreino, String idAluno, bool adicionar) async {
+    var endpoint = adicionar ? 'atribuirTreinoAoAluno' : 'removerTreinoDoAluno';
+    var response = await ApiRest()
+        .post('/usuario/$endpoint?idAluno=$idAluno&idTreino=$idTreino');
+    if (response.statusCode >= 200 && response.statusCode < 300) {
+      return 200;
+    } else {
+      return 500;
+    }
+  }
+
   // static Future<int> registrarTreino(Map<String, dynamic> treino) async {
   //   var response = await ApiRest().post('/treino', treino);
   //   if (response.statusCode >= 200 && response.statusCode < 300) {
@@ -61,7 +73,7 @@ class AssociarRequests {
   //   }
   // }
 
-  // static Future<int> excluirTreino(int id) async {
+  // static Future<int> excluirTreino(String id) async {
   //   var response = await ApiRest().delete('/treino/$id');
 
   //   if (response.statusCode >= 200 && response.statusCode < 300) {

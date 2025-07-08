@@ -7,7 +7,7 @@ part 'grupo_muscular.g.dart';
 @freezed
 class GrupoMuscular with _$GrupoMuscular {
   factory GrupoMuscular({
-    @Default(0) int id,
+    @Default("") String id,
     @Default("") String nome,
     @Default([]) List<Exercicio> exercicios,
   }) = _GrupoMuscular;

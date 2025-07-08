@@ -45,7 +45,8 @@ class CriarExercicioView extends HookConsumerWidget {
       Exercicio exercicio = Exercicio(
           id: null,
           nome: nomeController.text,
-          grupoMuscular: grupoSelecionado,
+          idGrupoMuscular: grupoSelecionado.id,
+          nomeGrupoMuscular: grupoSelecionado.nome,
           descricao: descrController.text);
 
       try {

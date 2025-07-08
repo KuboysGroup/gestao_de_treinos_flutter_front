@@ -1,18 +1,10 @@
 // ignore_for_file: use_build_context_synchronously
 
-import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:gestao_de_treinos_flutter_front/helpers/buttons.dart';
-import 'package:gestao_de_treinos_flutter_front/helpers/date_picker.dart';
-import 'package:gestao_de_treinos_flutter_front/helpers/modals.dart';
 import 'package:gestao_de_treinos_flutter_front/helpers/toast.dart';
-import 'package:gestao_de_treinos_flutter_front/models/exercicio.dart';
-import 'package:gestao_de_treinos_flutter_front/models/treino.dart';
 import 'package:gestao_de_treinos_flutter_front/models/usuario.dart';
-import 'package:gestao_de_treinos_flutter_front/screens/instrutor/criar_exercicios/requests/exercicios_requests.dart';
-import 'package:gestao_de_treinos_flutter_front/screens/instrutor/criar_exercicios/states/grupo_muscular_selecionado_state.dart';
-import 'package:gestao_de_treinos_flutter_front/screens/instrutor/criar_exercicios/views/selecionar_grupo.dart';
 import 'package:gestao_de_treinos_flutter_front/screens/instrutor/criar_treinos/requests/treinos_requests.dart';
 import 'package:gestao_de_treinos_flutter_front/screens/instrutor/criar_treinos/states/treinos_state.dart';
 import 'package:go_router/go_router.dart';
@@ -35,9 +27,10 @@ class CriarTreinoView extends HookConsumerWidget {
         return;
       }
       Map<String, dynamic> treino = {
-        "idTreino": null,
-        "nomeTreino": nomeController.text,
+        "id": null,
+        "nome": nomeController.text,
         "idInstrutor": usuario.id,
+        "nomeInstrutor": usuario.nome,
         "exercicios": []
       };
 

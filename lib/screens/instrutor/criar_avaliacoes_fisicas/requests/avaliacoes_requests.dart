@@ -6,7 +6,7 @@ import 'package:gestao_de_treinos_flutter_front/models/usuario.dart';
 import 'package:http/http.dart' as http;
 
 class AvaliacoesRequests {
-  static Future<List<AvaliacaoFisica>> getAvaliacoes(int id) async {
+  static Future<List<AvaliacaoFisica>> getAvaliacoes(String id) async {
     try {
       var response = await ApiRest().get('/avaliacao-fisica/instrutor/$id');
       if (response.statusCode == 200) {
@@ -47,7 +47,7 @@ class AvaliacoesRequests {
     }
   }
 
-  static Future<int> excluirAvaliacao(int id) async {
+  static Future<int> excluirAvaliacao(String id) async {
     var response = await ApiRest().delete('/avaliacao-fisica/$id');
 
     if (response.statusCode >= 200 && response.statusCode < 300) {

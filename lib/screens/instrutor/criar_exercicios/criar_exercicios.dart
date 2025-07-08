@@ -191,7 +191,7 @@ class PedidosRows extends DataTableSource {
       cells: [
         DataCell(Text(exercicio.nome)),
         DataCell(Text(exercicio.descricao)),
-        DataCell(Text(exercicio.grupoMuscular!.nome)),
+        DataCell(Text(exercicio.nomeGrupoMuscular)),
         DataCell(Padding(
           padding: const EdgeInsets.symmetric(vertical: 3.0, horizontal: 12),
           child: Button(

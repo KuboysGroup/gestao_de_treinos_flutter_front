@@ -218,7 +218,7 @@ class PedidosRows extends DataTableSource {
       selected: false,
       cells: [
         DataCell(Text(output.format(parsedDate))),
-        DataCell(Text(avaliacaoFisica.aluno!.nome)),
+        DataCell(Text(avaliacaoFisica.nomeAluno)),
         DataCell(Text('${avaliacaoFisica.peso.toStringAsFixed(2)} Kg')),
         DataCell(Text(avaliacaoFisica.altura.toStringAsFixed(2))),
         DataCell(Text(avaliacaoFisica.imc.toStringAsFixed(2))),

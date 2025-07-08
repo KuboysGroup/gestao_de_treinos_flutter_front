@@ -71,7 +71,7 @@ class AssociarTreinos extends HookConsumerWidget {
                                       children: [
                                         ...user.treinos.map((treino) {
                                           return ListTile(
-                                            title: Text(treino.nome),
+                                            title: Text(treino.treino.nome),
                                             subtitle: Column(
                                               crossAxisAlignment:
                                                   CrossAxisAlignment.start,
@@ -80,7 +80,7 @@ class AssociarTreinos extends HookConsumerWidget {
                                                   spacing: 10,
                                                   children: [
                                                     Text(
-                                                      'Exercícios: ${treino.exercicios.length}',
+                                                      'Exercícios: ${treino.treino.exercicios.length}',
                                                       style: TextStyle(
                                                           fontSize: 12),
                                                     ),
@@ -95,40 +95,19 @@ class AssociarTreinos extends HookConsumerWidget {
                                                 color: Colors.redAccent,
                                                 onTap: () async {
                                                   try {
-                                                    final treinosRestantes =
-                                                        user.treinos
-                                                            .where((t) =>
-                                                                t.id !=
-                                                                treino.id)
-                                                            .map((t) =>
-                                                                {"id": t.id})
-                                                            .toList();
-
-                                                    Map<String, dynamic>
-                                                        usuarioRequest = {
-                                                      "nome": user.nome,
-                                                      "email": user.email,
-                                                      "senha": user.senha,
-                                                      "dataNascimento":
-                                                          user.dataNascimento,
-                                                      "perfil": user.perfil,
-                                                      "treinos":
-                                                          treinosRestantes,
-                                                    };
-
                                                     await AssociarRequests
-                                                        .atualizarTreino(
+                                                        .associarTreino(
+                                                            treino.treino.id,
                                                             user.id!,
-                                                            usuarioRequest);
-
+                                                            false);
                                                     ref
                                                         .read(
                                                             usuariosStateProvider
                                                                 .notifier)
                                                         .removerTreinoDoUsuario(
                                                             usuarioId: user.id!,
-                                                            treinoId:
-                                                                treino.id);
+                                                            treinoId: treino
+                                                                .treino.id);
                                                     showTostification(
                                                         context,
                                                         ToastificationType

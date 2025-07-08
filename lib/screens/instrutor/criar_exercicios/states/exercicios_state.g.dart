@@ -6,7 +6,7 @@ part of 'exercicios_state.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$exerciciosStateHash() => r'0064aeb22ea2e6138f8c9c248d5fddabdf90ca51';
+String _$exerciciosStateHash() => r'b3cab6a5e6ccede8b8f553d571657cc4a510fadd';
 
 /// See also [ExerciciosState].
 @ProviderFor(ExerciciosState)

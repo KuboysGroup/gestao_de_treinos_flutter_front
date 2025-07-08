@@ -29,7 +29,7 @@ class ExecutarTreino extends HookConsumerWidget {
                 const SizedBox(height: 6.0),
                 ...treino.exercicios.map((exercicio) {
                   return CheckboxListTile(
-                      title: Text(exercicio.exercicio!.nome),
+                      title: Text(exercicio.nomeExercicio),
                       subtitle: Row(
                         spacing: 10,
                         children: [
@@ -43,7 +43,7 @@ class ExecutarTreino extends HookConsumerWidget {
                         await ref
                             .read(usuarioStateProvider.notifier)
                             .marcarTreinoExercicioComoConcluido(
-                                treino.id, exercicio.exercicio!.id!, value!);
+                                treino.id, exercicio.idExercicio!, value!);
                       });
                 })
               ],

@@ -1,17 +1,17 @@
 import 'dart:convert';
 
 import 'package:gestao_de_treinos_flutter_front/config/api/api_rest.dart';
-import 'package:gestao_de_treinos_flutter_front/models/treino.dart';
+import 'package:gestao_de_treinos_flutter_front/models/aluno_treino.dart';
 import 'package:http/http.dart' as http;
 
 class TreinosResquests {
-  static Future<List<Treino>> getTreinos(int id) async {
+  static Future<List<AlunoTreino>> getTreinos(String id) async {
     try {
       var response = await ApiRest().get('/treino/aluno/$id');
       if (response.statusCode == 200) {
         response = _decodeResponse(response);
         List<dynamic> body = json.decode(response.body);
-        return body.map((dynamic item) => Treino.fromJson(item)).toList();
+        return body.map((dynamic item) => AlunoTreino.fromJson(item)).toList();
       } else {
         throw Exception('Falha ao carregar avaliações exercícios');
       }
@@ -46,7 +46,7 @@ class TreinosResquests {
   //   }
   // }
 
-  // static Future<int> excluirExercicio(int id) async {
+  // static Future<int> excluirExercicio(String id) async {
   //   var response = await ApiRest().delete('/exercicio/$id');
 
   //   if (response.statusCode >= 200 && response.statusCode < 300) {

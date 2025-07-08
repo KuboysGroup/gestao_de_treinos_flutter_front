@@ -134,24 +134,32 @@ class AdicionarExercicioView extends HookConsumerWidget {
                         try {
                           final TreinoExercicio exercicioTreino =
                               TreinoExercicio(
-                                  treino: treino,
+                                  idTreino: treino.id,
                                   series: int.parse(seriesController.text),
+                                  nomeExercicio: exercicioSelecionado!.nome,
+                                  nomeGrupoMuscular:
+                                      exercicioSelecionado.nomeGrupoMuscular,
                                   repeticoes: int.parse(repetController.text),
-                                  exercicio: exercicioSelecionado);
+                                  idExercicio: exercicioSelecionado.id);
 
                           final treinoAtualizado = treino.copyWith(
                             exercicios: [...treino.exercicios, exercicioTreino],
                           );
 
                           Map<String, dynamic> treinoRequisicao = {
-                            'nomeTreino': treinoAtualizado.nome,
+                            'id': treino.id,
+                            'nome': treinoAtualizado.nome,
                             'idInstrutor': usuario.id ?? null,
+                            'nomeInstrutor': usuario.nome,
                             "exercicios": treinoAtualizado.exercicios
-                                .where((e) => e.exercicio?.id != null)
+                                .where((e) => e.idExercicio != null)
                                 .map((e) => {
-                                      "idExercicio": e.exercicio!.id!,
+                                      "idExercicio": e.idExercicio,
                                       "series": e.series,
                                       "repeticoes": e.repeticoes,
+                                      "idTreino": treino.id,
+                                      "nomeExercicio": e.nomeExercicio,
+                                      "nomeGrupoMuscular": e.nomeGrupoMuscular
                                     })
                                 .toList(),
                           };

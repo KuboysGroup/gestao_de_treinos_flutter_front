@@ -20,9 +20,11 @@ AvaliacaoFisica _$AvaliacaoFisicaFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$AvaliacaoFisica {
-  int? get id => throw _privateConstructorUsedError;
-  Usuario? get aluno => throw _privateConstructorUsedError;
-  Usuario? get instrutor => throw _privateConstructorUsedError;
+  String? get id => throw _privateConstructorUsedError;
+  String? get idAluno => throw _privateConstructorUsedError;
+  String get nomeAluno => throw _privateConstructorUsedError;
+  String? get idInstrutor => throw _privateConstructorUsedError;
+  String get nomeInstrutor => throw _privateConstructorUsedError;
   String get data => throw _privateConstructorUsedError;
   double get peso => throw _privateConstructorUsedError;
   double get altura => throw _privateConstructorUsedError;
@@ -43,18 +45,17 @@ abstract class $AvaliacaoFisicaCopyWith<$Res> {
       _$AvaliacaoFisicaCopyWithImpl<$Res, AvaliacaoFisica>;
   @useResult
   $Res call(
-      {int? id,
-      Usuario? aluno,
-      Usuario? instrutor,
+      {String? id,
+      String? idAluno,
+      String nomeAluno,
+      String? idInstrutor,
+      String nomeInstrutor,
       String data,
       double peso,
       double altura,
       double imc,
       double percentualGordura,
       double massaMuscularKg});
-
-  $UsuarioCopyWith<$Res>? get aluno;
-  $UsuarioCopyWith<$Res>? get instrutor;
 }
 
 /// @nodoc
@@ -71,8 +72,10 @@ class _$AvaliacaoFisicaCopyWithImpl<$Res, $Val extends AvaliacaoFisica>
   @override
   $Res call({
     Object? id = freezed,
-    Object? aluno = freezed,
-    Object? instrutor = freezed,
+    Object? idAluno = freezed,
+    Object? nomeAluno = null,
+    Object? idInstrutor = freezed,
+    Object? nomeInstrutor = null,
     Object? data = null,
     Object? peso = null,
     Object? altura = null,
@@ -84,15 +87,23 @@ class _$AvaliacaoFisicaCopyWithImpl<$Res, $Val extends AvaliacaoFisica>
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int?,
-      aluno: freezed == aluno
-          ? _value.aluno
-          : aluno // ignore: cast_nullable_to_non_nullable
-              as Usuario?,
-      instrutor: freezed == instrutor
-          ? _value.instrutor
-          : instrutor // ignore: cast_nullable_to_non_nullable
-              as Usuario?,
+              as String?,
+      idAluno: freezed == idAluno
+          ? _value.idAluno
+          : idAluno // ignore: cast_nullable_to_non_nullable
+              as String?,
+      nomeAluno: null == nomeAluno
+          ? _value.nomeAluno
+          : nomeAluno // ignore: cast_nullable_to_non_nullable
+              as String,
+      idInstrutor: freezed == idInstrutor
+          ? _value.idInstrutor
+          : idInstrutor // ignore: cast_nullable_to_non_nullable
+              as String?,
+      nomeInstrutor: null == nomeInstrutor
+          ? _value.nomeInstrutor
+          : nomeInstrutor // ignore: cast_nullable_to_non_nullable
+              as String,
       data: null == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
@@ -119,30 +130,6 @@ class _$AvaliacaoFisicaCopyWithImpl<$Res, $Val extends AvaliacaoFisica>
               as double,
     ) as $Val);
   }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $UsuarioCopyWith<$Res>? get aluno {
-    if (_value.aluno == null) {
-      return null;
-    }
-
-    return $UsuarioCopyWith<$Res>(_value.aluno!, (value) {
-      return _then(_value.copyWith(aluno: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $UsuarioCopyWith<$Res>? get instrutor {
-    if (_value.instrutor == null) {
-      return null;
-    }
-
-    return $UsuarioCopyWith<$Res>(_value.instrutor!, (value) {
-      return _then(_value.copyWith(instrutor: value) as $Val);
-    });
-  }
 }
 
 /// @nodoc
@@ -154,20 +141,17 @@ abstract class _$$AvaliacaoFisicaImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {int? id,
-      Usuario? aluno,
-      Usuario? instrutor,
+      {String? id,
+      String? idAluno,
+      String nomeAluno,
+      String? idInstrutor,
+      String nomeInstrutor,
       String data,
       double peso,
       double altura,
       double imc,
       double percentualGordura,
       double massaMuscularKg});
-
-  @override
-  $UsuarioCopyWith<$Res>? get aluno;
-  @override
-  $UsuarioCopyWith<$Res>? get instrutor;
 }
 
 /// @nodoc
@@ -182,8 +166,10 @@ class __$$AvaliacaoFisicaImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = freezed,
-    Object? aluno = freezed,
-    Object? instrutor = freezed,
+    Object? idAluno = freezed,
+    Object? nomeAluno = null,
+    Object? idInstrutor = freezed,
+    Object? nomeInstrutor = null,
     Object? data = null,
     Object? peso = null,
     Object? altura = null,
@@ -195,15 +181,23 @@ class __$$AvaliacaoFisicaImplCopyWithImpl<$Res>
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int?,
-      aluno: freezed == aluno
-          ? _value.aluno
-          : aluno // ignore: cast_nullable_to_non_nullable
-              as Usuario?,
-      instrutor: freezed == instrutor
-          ? _value.instrutor
-          : instrutor // ignore: cast_nullable_to_non_nullable
-              as Usuario?,
+              as String?,
+      idAluno: freezed == idAluno
+          ? _value.idAluno
+          : idAluno // ignore: cast_nullable_to_non_nullable
+              as String?,
+      nomeAluno: null == nomeAluno
+          ? _value.nomeAluno
+          : nomeAluno // ignore: cast_nullable_to_non_nullable
+              as String,
+      idInstrutor: freezed == idInstrutor
+          ? _value.idInstrutor
+          : idInstrutor // ignore: cast_nullable_to_non_nullable
+              as String?,
+      nomeInstrutor: null == nomeInstrutor
+          ? _value.nomeInstrutor
+          : nomeInstrutor // ignore: cast_nullable_to_non_nullable
+              as String,
       data: null == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
@@ -236,9 +230,11 @@ class __$$AvaliacaoFisicaImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$AvaliacaoFisicaImpl implements _AvaliacaoFisica {
   _$AvaliacaoFisicaImpl(
-      {this.id = 0,
-      this.aluno,
-      this.instrutor,
+      {this.id = "",
+      this.idAluno,
+      this.nomeAluno = "",
+      this.idInstrutor,
+      this.nomeInstrutor = "",
       this.data = "",
       this.peso = 0.0,
       this.altura = 0.0,
@@ -251,11 +247,17 @@ class _$AvaliacaoFisicaImpl implements _AvaliacaoFisica {
 
   @override
   @JsonKey()
-  final int? id;
+  final String? id;
   @override
-  final Usuario? aluno;
+  final String? idAluno;
   @override
-  final Usuario? instrutor;
+  @JsonKey()
+  final String nomeAluno;
+  @override
+  final String? idInstrutor;
+  @override
+  @JsonKey()
+  final String nomeInstrutor;
   @override
   @JsonKey()
   final String data;
@@ -277,7 +279,7 @@ class _$AvaliacaoFisicaImpl implements _AvaliacaoFisica {
 
   @override
   String toString() {
-    return 'AvaliacaoFisica(id: $id, aluno: $aluno, instrutor: $instrutor, data: $data, peso: $peso, altura: $altura, imc: $imc, percentualGordura: $percentualGordura, massaMuscularKg: $massaMuscularKg)';
+    return 'AvaliacaoFisica(id: $id, idAluno: $idAluno, nomeAluno: $nomeAluno, idInstrutor: $idInstrutor, nomeInstrutor: $nomeInstrutor, data: $data, peso: $peso, altura: $altura, imc: $imc, percentualGordura: $percentualGordura, massaMuscularKg: $massaMuscularKg)';
   }
 
   @override
@@ -286,9 +288,13 @@ class _$AvaliacaoFisicaImpl implements _AvaliacaoFisica {
         (other.runtimeType == runtimeType &&
             other is _$AvaliacaoFisicaImpl &&
             (identical(other.id, id) || other.id == id) &&
-            (identical(other.aluno, aluno) || other.aluno == aluno) &&
-            (identical(other.instrutor, instrutor) ||
-                other.instrutor == instrutor) &&
+            (identical(other.idAluno, idAluno) || other.idAluno == idAluno) &&
+            (identical(other.nomeAluno, nomeAluno) ||
+                other.nomeAluno == nomeAluno) &&
+            (identical(other.idInstrutor, idInstrutor) ||
+                other.idInstrutor == idInstrutor) &&
+            (identical(other.nomeInstrutor, nomeInstrutor) ||
+                other.nomeInstrutor == nomeInstrutor) &&
             (identical(other.data, data) || other.data == data) &&
             (identical(other.peso, peso) || other.peso == peso) &&
             (identical(other.altura, altura) || other.altura == altura) &&
@@ -301,8 +307,19 @@ class _$AvaliacaoFisicaImpl implements _AvaliacaoFisica {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, aluno, instrutor, data, peso,
-      altura, imc, percentualGordura, massaMuscularKg);
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      idAluno,
+      nomeAluno,
+      idInstrutor,
+      nomeInstrutor,
+      data,
+      peso,
+      altura,
+      imc,
+      percentualGordura,
+      massaMuscularKg);
 
   @JsonKey(ignore: true)
   @override
@@ -321,9 +338,11 @@ class _$AvaliacaoFisicaImpl implements _AvaliacaoFisica {
 
 abstract class _AvaliacaoFisica implements AvaliacaoFisica {
   factory _AvaliacaoFisica(
-      {final int? id,
-      final Usuario? aluno,
-      final Usuario? instrutor,
+      {final String? id,
+      final String? idAluno,
+      final String nomeAluno,
+      final String? idInstrutor,
+      final String nomeInstrutor,
       final String data,
       final double peso,
       final double altura,
@@ -335,11 +354,15 @@ abstract class _AvaliacaoFisica implements AvaliacaoFisica {
       _$AvaliacaoFisicaImpl.fromJson;
 
   @override
-  int? get id;
+  String? get id;
   @override
-  Usuario? get aluno;
+  String? get idAluno;
   @override
-  Usuario? get instrutor;
+  String get nomeAluno;
+  @override
+  String? get idInstrutor;
+  @override
+  String get nomeInstrutor;
   @override
   String get data;
   @override

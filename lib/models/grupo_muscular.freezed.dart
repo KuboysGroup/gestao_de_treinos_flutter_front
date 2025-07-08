@@ -20,7 +20,7 @@ GrupoMuscular _$GrupoMuscularFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$GrupoMuscular {
-  int get id => throw _privateConstructorUsedError;
+  String get id => throw _privateConstructorUsedError;
   String get nome => throw _privateConstructorUsedError;
   List<Exercicio> get exercicios => throw _privateConstructorUsedError;
 
@@ -36,7 +36,7 @@ abstract class $GrupoMuscularCopyWith<$Res> {
           GrupoMuscular value, $Res Function(GrupoMuscular) then) =
       _$GrupoMuscularCopyWithImpl<$Res, GrupoMuscular>;
   @useResult
-  $Res call({int id, String nome, List<Exercicio> exercicios});
+  $Res call({String id, String nome, List<Exercicio> exercicios});
 }
 
 /// @nodoc
@@ -60,7 +60,7 @@ class _$GrupoMuscularCopyWithImpl<$Res, $Val extends GrupoMuscular>
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
       nome: null == nome
           ? _value.nome
           : nome // ignore: cast_nullable_to_non_nullable
@@ -81,7 +81,7 @@ abstract class _$$GrupoMuscularImplCopyWith<$Res>
       __$$GrupoMuscularImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int id, String nome, List<Exercicio> exercicios});
+  $Res call({String id, String nome, List<Exercicio> exercicios});
 }
 
 /// @nodoc
@@ -103,7 +103,7 @@ class __$$GrupoMuscularImplCopyWithImpl<$Res>
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
       nome: null == nome
           ? _value.nome
           : nome // ignore: cast_nullable_to_non_nullable
@@ -120,7 +120,7 @@ class __$$GrupoMuscularImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$GrupoMuscularImpl implements _GrupoMuscular {
   _$GrupoMuscularImpl(
-      {this.id = 0,
+      {this.id = "",
       this.nome = "",
       final List<Exercicio> exercicios = const []})
       : _exercicios = exercicios;
@@ -130,7 +130,7 @@ class _$GrupoMuscularImpl implements _GrupoMuscular {
 
   @override
   @JsonKey()
-  final int id;
+  final String id;
   @override
   @JsonKey()
   final String nome;
@@ -180,7 +180,7 @@ class _$GrupoMuscularImpl implements _GrupoMuscular {
 
 abstract class _GrupoMuscular implements GrupoMuscular {
   factory _GrupoMuscular(
-      {final int id,
+      {final String id,
       final String nome,
       final List<Exercicio> exercicios}) = _$GrupoMuscularImpl;
 
@@ -188,7 +188,7 @@ abstract class _GrupoMuscular implements GrupoMuscular {
       _$GrupoMuscularImpl.fromJson;
 
   @override
-  int get id;
+  String get id;
   @override
   String get nome;
   @override

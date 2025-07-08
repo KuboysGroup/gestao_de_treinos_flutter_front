@@ -9,13 +9,11 @@ part of 'avaliacao_fisica.dart';
 _$AvaliacaoFisicaImpl _$$AvaliacaoFisicaImplFromJson(
         Map<String, dynamic> json) =>
     _$AvaliacaoFisicaImpl(
-      id: (json['id'] as num?)?.toInt() ?? 0,
-      aluno: json['aluno'] == null
-          ? null
-          : Usuario.fromJson(json['aluno'] as Map<String, dynamic>),
-      instrutor: json['instrutor'] == null
-          ? null
-          : Usuario.fromJson(json['instrutor'] as Map<String, dynamic>),
+      id: json['id'] as String? ?? "",
+      idAluno: json['idAluno'] as String?,
+      nomeAluno: json['nomeAluno'] as String? ?? "",
+      idInstrutor: json['idInstrutor'] as String?,
+      nomeInstrutor: json['nomeInstrutor'] as String? ?? "",
       data: json['data'] as String? ?? "",
       peso: (json['peso'] as num?)?.toDouble() ?? 0.0,
       altura: (json['altura'] as num?)?.toDouble() ?? 0.0,
@@ -28,8 +26,10 @@ Map<String, dynamic> _$$AvaliacaoFisicaImplToJson(
         _$AvaliacaoFisicaImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'aluno': instance.aluno,
-      'instrutor': instance.instrutor,
+      'idAluno': instance.idAluno,
+      'nomeAluno': instance.nomeAluno,
+      'idInstrutor': instance.idInstrutor,
+      'nomeInstrutor': instance.nomeInstrutor,
       'data': instance.data,
       'peso': instance.peso,
       'altura': instance.altura,

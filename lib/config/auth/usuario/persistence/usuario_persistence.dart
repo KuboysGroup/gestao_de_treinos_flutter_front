@@ -11,7 +11,7 @@ class UsuarioPersistence {
   static Future<void> write(Usuario userData) async {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
 
-    await prefs.setInt(_idKey, userData.id!);
+    await prefs.setString(_idKey, userData.id!);
     await prefs.setString(_emailKey, userData.email);
     await prefs.setString(_senhaKey, userData.senha);
     await prefs.setString(_nomeKey, userData.nome);
@@ -21,7 +21,7 @@ class UsuarioPersistence {
   static Future<Usuario?> read() async {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
 
-    final int? id = prefs.getInt(_idKey);
+    final String? id = prefs.getString(_idKey);
     final String? email = prefs.getString(_emailKey);
     final String? senha = prefs.getString(_senhaKey);
     final String? nome = prefs.getString(_nomeKey);

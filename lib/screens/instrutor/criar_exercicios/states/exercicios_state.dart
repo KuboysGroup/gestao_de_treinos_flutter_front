@@ -11,7 +11,7 @@ class ExerciciosState extends _$ExerciciosState {
     return await ExerciciosRequests.getExercicios();
   }
 
-  void removerPreposto(int id) {
+  void removerPreposto(String id) {
     state = state.whenData((exercicios) {
       return exercicios.where((exercicio) => exercicio.id != id).toList();
     });

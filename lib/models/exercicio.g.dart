@@ -8,13 +8,11 @@ part of 'exercicio.dart';
 
 _$ExercicioImpl _$$ExercicioImplFromJson(Map<String, dynamic> json) =>
     _$ExercicioImpl(
-      id: (json['id'] as num?)?.toInt() ?? 0,
+      id: json['id'] as String? ?? "",
       nome: json['nome'] as String? ?? "",
       descricao: json['descricao'] as String? ?? "",
-      grupoMuscular: json['grupoMuscular'] == null
-          ? null
-          : GrupoMuscular.fromJson(
-              json['grupoMuscular'] as Map<String, dynamic>),
+      idGrupoMuscular: json['idGrupoMuscular'] as String? ?? "",
+      nomeGrupoMuscular: json['nomeGrupoMuscular'] as String? ?? "",
     );
 
 Map<String, dynamic> _$$ExercicioImplToJson(_$ExercicioImpl instance) =>
@@ -22,5 +20,6 @@ Map<String, dynamic> _$$ExercicioImplToJson(_$ExercicioImpl instance) =>
       'id': instance.id,
       'nome': instance.nome,
       'descricao': instance.descricao,
-      'grupoMuscular': instance.grupoMuscular,
+      'idGrupoMuscular': instance.idGrupoMuscular,
+      'nomeGrupoMuscular': instance.nomeGrupoMuscular,
     };

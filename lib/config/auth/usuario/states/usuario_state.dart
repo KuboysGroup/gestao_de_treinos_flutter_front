@@ -2,6 +2,8 @@ import 'package:gestao_de_treinos_flutter_front/config/api/api_rest.dart';
 import 'package:gestao_de_treinos_flutter_front/config/auth/login/login_request.dart';
 import 'package:gestao_de_treinos_flutter_front/config/auth/logout/logout_request.dart';
 import 'package:gestao_de_treinos_flutter_front/config/auth/usuario/persistence/usuario_persistence.dart';
+import 'package:gestao_de_treinos_flutter_front/models/aluno_treino.dart';
+import 'package:gestao_de_treinos_flutter_front/models/treino.dart';
 import 'package:gestao_de_treinos_flutter_front/models/usuario.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
@@ -32,13 +34,13 @@ class UsuarioState extends _$UsuarioState {
     state = const AsyncValue.data(null);
   }
 
-  Future<void> marcarTreinoComoConcluido(int treinoId) async {
+  Future<void> marcarTreinoComoConcluido(String treinoId) async {
     final usuarioAtual = state.value;
     if (usuarioAtual == null) return;
 
     final treinosAtualizados = usuarioAtual.treinos.map((treino) {
-      if (treino.id == treinoId) {
-        return treino.copyWith(concluido: !treino.concluido);
+      if (treino.treino.id == treinoId) {
+        return treino.copyWith(concluido: !treino.treino.concluido);
       }
       return treino;
     }).toList();
@@ -51,20 +53,24 @@ class UsuarioState extends _$UsuarioState {
   }
 
   Future<void> marcarTreinoExercicioComoConcluido(
-      int treinoId, int exercicioId, bool value) async {
+      String treinoId, String exercicioId, bool value) async {
     final usuarioAtual = state.value;
     if (usuarioAtual == null) return;
 
     final treinosAtualizados = usuarioAtual.treinos.map((treino) {
-      if (treino.id == treinoId) {
-        final exerciciosAtualizados = treino.exercicios.map((ex) {
-          if (ex.exercicio?.id == exercicioId) {
+      if (treino.treino.id == treinoId) {
+        final exerciciosAtualizados = treino.treino.exercicios.map((ex) {
+          if (ex.idExercicio == exercicioId) {
             return ex.copyWith(concluido: value);
           }
           return ex;
         }).toList();
 
-        return treino.copyWith(exercicios: exerciciosAtualizados);
+        return treino.copyWith(
+            treino: Treino(
+                exercicios: exerciciosAtualizados,
+                id: treinoId,
+                nome: treino.treino.nome));
       }
       return treino;
     }).toList();

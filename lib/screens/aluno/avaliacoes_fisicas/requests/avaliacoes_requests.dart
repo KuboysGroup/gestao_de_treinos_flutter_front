@@ -5,7 +5,7 @@ import 'package:gestao_de_treinos_flutter_front/models/avaliacao_fisica.dart';
 import 'package:http/http.dart' as http;
 
 class AvaliacoesRequests {
-  static Future<List<AvaliacaoFisica>> getAvaliacoes(int id) async {
+  static Future<List<AvaliacaoFisica>> getAvaliacoes(String id) async {
     try {
       var response = await ApiRest().get('/avaliacao-fisica/aluno/$id');
       if (response.statusCode == 200) {

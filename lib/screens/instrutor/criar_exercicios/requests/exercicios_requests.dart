@@ -47,7 +47,7 @@ class ExerciciosRequests {
     }
   }
 
-  static Future<int> excluirExercicio(int id) async {
+  static Future<int> excluirExercicio(String id) async {
     var response = await ApiRest().delete('/exercicio/$id');
 
     if (response.statusCode >= 200 && response.statusCode < 300) {

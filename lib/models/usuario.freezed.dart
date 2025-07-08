@@ -20,13 +20,13 @@ Usuario _$UsuarioFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Usuario {
-  int? get id => throw _privateConstructorUsedError;
+  String? get id => throw _privateConstructorUsedError;
   String get nome => throw _privateConstructorUsedError;
   String get email => throw _privateConstructorUsedError;
   String get senha => throw _privateConstructorUsedError;
   String get dataNascimento => throw _privateConstructorUsedError;
   String get perfil => throw _privateConstructorUsedError;
-  List<Treino> get treinos => throw _privateConstructorUsedError;
+  List<AlunoTreino> get treinos => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -39,13 +39,13 @@ abstract class $UsuarioCopyWith<$Res> {
       _$UsuarioCopyWithImpl<$Res, Usuario>;
   @useResult
   $Res call(
-      {int? id,
+      {String? id,
       String nome,
       String email,
       String senha,
       String dataNascimento,
       String perfil,
-      List<Treino> treinos});
+      List<AlunoTreino> treinos});
 }
 
 /// @nodoc
@@ -73,7 +73,7 @@ class _$UsuarioCopyWithImpl<$Res, $Val extends Usuario>
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String?,
       nome: null == nome
           ? _value.nome
           : nome // ignore: cast_nullable_to_non_nullable
@@ -97,7 +97,7 @@ class _$UsuarioCopyWithImpl<$Res, $Val extends Usuario>
       treinos: null == treinos
           ? _value.treinos
           : treinos // ignore: cast_nullable_to_non_nullable
-              as List<Treino>,
+              as List<AlunoTreino>,
     ) as $Val);
   }
 }
@@ -110,13 +110,13 @@ abstract class _$$UsuarioImplCopyWith<$Res> implements $UsuarioCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {int? id,
+      {String? id,
       String nome,
       String email,
       String senha,
       String dataNascimento,
       String perfil,
-      List<Treino> treinos});
+      List<AlunoTreino> treinos});
 }
 
 /// @nodoc
@@ -142,7 +142,7 @@ class __$$UsuarioImplCopyWithImpl<$Res>
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String?,
       nome: null == nome
           ? _value.nome
           : nome // ignore: cast_nullable_to_non_nullable
@@ -166,7 +166,7 @@ class __$$UsuarioImplCopyWithImpl<$Res>
       treinos: null == treinos
           ? _value._treinos
           : treinos // ignore: cast_nullable_to_non_nullable
-              as List<Treino>,
+              as List<AlunoTreino>,
     ));
   }
 }
@@ -175,13 +175,13 @@ class __$$UsuarioImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$UsuarioImpl implements _Usuario {
   _$UsuarioImpl(
-      {this.id = 0,
+      {this.id = "",
       this.nome = "",
       this.email = "",
       this.senha = "",
       this.dataNascimento = "",
       this.perfil = "",
-      final List<Treino> treinos = const []})
+      final List<AlunoTreino> treinos = const []})
       : _treinos = treinos;
 
   factory _$UsuarioImpl.fromJson(Map<String, dynamic> json) =>
@@ -189,7 +189,7 @@ class _$UsuarioImpl implements _Usuario {
 
   @override
   @JsonKey()
-  final int? id;
+  final String? id;
   @override
   @JsonKey()
   final String nome;
@@ -205,10 +205,10 @@ class _$UsuarioImpl implements _Usuario {
   @override
   @JsonKey()
   final String perfil;
-  final List<Treino> _treinos;
+  final List<AlunoTreino> _treinos;
   @override
   @JsonKey()
-  List<Treino> get treinos {
+  List<AlunoTreino> get treinos {
     if (_treinos is EqualUnmodifiableListView) return _treinos;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_treinos);
@@ -255,18 +255,18 @@ class _$UsuarioImpl implements _Usuario {
 
 abstract class _Usuario implements Usuario {
   factory _Usuario(
-      {final int? id,
+      {final String? id,
       final String nome,
       final String email,
       final String senha,
       final String dataNascimento,
       final String perfil,
-      final List<Treino> treinos}) = _$UsuarioImpl;
+      final List<AlunoTreino> treinos}) = _$UsuarioImpl;
 
   factory _Usuario.fromJson(Map<String, dynamic> json) = _$UsuarioImpl.fromJson;
 
   @override
-  int? get id;
+  String? get id;
   @override
   String get nome;
   @override
@@ -278,7 +278,7 @@ abstract class _Usuario implements Usuario {
   @override
   String get perfil;
   @override
-  List<Treino> get treinos;
+  List<AlunoTreino> get treinos;
   @override
   @JsonKey(ignore: true)
   _$$UsuarioImplCopyWith<_$UsuarioImpl> get copyWith =>

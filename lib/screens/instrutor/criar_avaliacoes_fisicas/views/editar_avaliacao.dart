@@ -16,7 +16,7 @@ class EditarAvaliacao extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    ref.read(avaliacoesStateProvider(avaliacaoFisica.instrutor!.id!));
+    ref.read(avaliacoesStateProvider(avaliacaoFisica.idInstrutor!));
     Future<void> excluir() async {
       try {
         final response =
@@ -26,7 +26,7 @@ class EditarAvaliacao extends HookConsumerWidget {
               'Erro ao excluir avaliação');
         } else {
           ref
-              .read(avaliacoesStateProvider(avaliacaoFisica.instrutor!.id!)
+              .read(avaliacoesStateProvider(avaliacaoFisica.idInstrutor!)
                   .notifier)
               .removerAvaliacao(avaliacaoFisica.id!);
           context.pop();
@@ -49,7 +49,7 @@ class EditarAvaliacao extends HookConsumerWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(avaliacaoFisica.aluno!.nome,
+                Text(avaliacaoFisica.nomeAluno,
                     style: TextStyle(fontSize: 20.0)),
                 const SizedBox(height: 6.0),
                 const Text(
@@ -74,21 +74,21 @@ class EditarAvaliacao extends HookConsumerWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text('Aluno'),
-                        Text(avaliacaoFisica.aluno!.nome,
+                        Text(avaliacaoFisica.nomeAluno,
                             style: TextStyle(color: Colors.grey))
                       ],
                     ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text('Email'),
-                        Flexible(
-                          child: Text(avaliacaoFisica.aluno!.email,
-                              textAlign: TextAlign.end,
-                              style: TextStyle(color: Colors.grey)),
-                        )
-                      ],
-                    ),
+                    // Row(
+                    //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    //   children: [
+                    //     Text('Email'),
+                    //     Flexible(
+                    //       child: Text(avaliacaoFisica.aluno!.email,
+                    //           textAlign: TextAlign.end,
+                    //           style: TextStyle(color: Colors.grey)),
+                    //     )
+                    //   ],
+                    // ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [

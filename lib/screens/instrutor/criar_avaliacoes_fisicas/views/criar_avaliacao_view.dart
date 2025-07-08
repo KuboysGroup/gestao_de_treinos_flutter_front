@@ -38,8 +38,10 @@ class CriarAvaliacaoView extends HookConsumerWidget {
 
       Map<String, dynamic> bodyrequest = {
         'id': null,
-        'instrutor': {'id': instrutor.id},
-        'aluno': {'id': aluno.id},
+        'idInstrutor': instrutor.id,
+        'nomeInstrutor': instrutor.nome,
+        'idAluno': aluno.id,
+        'nomeAluno': aluno.nome,
         'peso': double.parse(pesoController.text),
         'altura': double.parse(alturaController.text),
         'percentualGordura': double.parse(percentualGorduraController.text),

@@ -6,7 +6,7 @@ part of 'treinos_state.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$treinosStateHash() => r'dbeee287977e387d4ad37bf7f452a97493b342ad';
+String _$treinosStateHash() => r'e4e81e180f36295b3d75f457d64c32c2ff685683';
 
 /// See also [TreinosState].
 @ProviderFor(TreinosState)

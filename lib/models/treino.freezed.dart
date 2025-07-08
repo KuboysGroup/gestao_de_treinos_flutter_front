@@ -20,12 +20,12 @@ Treino _$TreinoFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Treino {
-  int get id => throw _privateConstructorUsedError;
+  String get id => throw _privateConstructorUsedError;
   String get nome => throw _privateConstructorUsedError;
+  String get idInstrutor => throw _privateConstructorUsedError;
+  String get nomeInstrutor => throw _privateConstructorUsedError;
   List<TreinoExercicio> get exercicios => throw _privateConstructorUsedError;
-  List<Usuario> get alunos => throw _privateConstructorUsedError;
   bool get concluido => throw _privateConstructorUsedError;
-  Usuario? get instrutor => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -38,14 +38,12 @@ abstract class $TreinoCopyWith<$Res> {
       _$TreinoCopyWithImpl<$Res, Treino>;
   @useResult
   $Res call(
-      {int id,
+      {String id,
       String nome,
+      String idInstrutor,
+      String nomeInstrutor,
       List<TreinoExercicio> exercicios,
-      List<Usuario> alunos,
-      bool concluido,
-      Usuario? instrutor});
-
-  $UsuarioCopyWith<$Res>? get instrutor;
+      bool concluido});
 }
 
 /// @nodoc
@@ -63,49 +61,37 @@ class _$TreinoCopyWithImpl<$Res, $Val extends Treino>
   $Res call({
     Object? id = null,
     Object? nome = null,
+    Object? idInstrutor = null,
+    Object? nomeInstrutor = null,
     Object? exercicios = null,
-    Object? alunos = null,
     Object? concluido = null,
-    Object? instrutor = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
       nome: null == nome
           ? _value.nome
           : nome // ignore: cast_nullable_to_non_nullable
+              as String,
+      idInstrutor: null == idInstrutor
+          ? _value.idInstrutor
+          : idInstrutor // ignore: cast_nullable_to_non_nullable
+              as String,
+      nomeInstrutor: null == nomeInstrutor
+          ? _value.nomeInstrutor
+          : nomeInstrutor // ignore: cast_nullable_to_non_nullable
               as String,
       exercicios: null == exercicios
           ? _value.exercicios
           : exercicios // ignore: cast_nullable_to_non_nullable
               as List<TreinoExercicio>,
-      alunos: null == alunos
-          ? _value.alunos
-          : alunos // ignore: cast_nullable_to_non_nullable
-              as List<Usuario>,
       concluido: null == concluido
           ? _value.concluido
           : concluido // ignore: cast_nullable_to_non_nullable
               as bool,
-      instrutor: freezed == instrutor
-          ? _value.instrutor
-          : instrutor // ignore: cast_nullable_to_non_nullable
-              as Usuario?,
     ) as $Val);
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $UsuarioCopyWith<$Res>? get instrutor {
-    if (_value.instrutor == null) {
-      return null;
-    }
-
-    return $UsuarioCopyWith<$Res>(_value.instrutor!, (value) {
-      return _then(_value.copyWith(instrutor: value) as $Val);
-    });
   }
 }
 
@@ -117,15 +103,12 @@ abstract class _$$TreinoImplCopyWith<$Res> implements $TreinoCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {int id,
+      {String id,
       String nome,
+      String idInstrutor,
+      String nomeInstrutor,
       List<TreinoExercicio> exercicios,
-      List<Usuario> alunos,
-      bool concluido,
-      Usuario? instrutor});
-
-  @override
-  $UsuarioCopyWith<$Res>? get instrutor;
+      bool concluido});
 }
 
 /// @nodoc
@@ -141,36 +124,36 @@ class __$$TreinoImplCopyWithImpl<$Res>
   $Res call({
     Object? id = null,
     Object? nome = null,
+    Object? idInstrutor = null,
+    Object? nomeInstrutor = null,
     Object? exercicios = null,
-    Object? alunos = null,
     Object? concluido = null,
-    Object? instrutor = freezed,
   }) {
     return _then(_$TreinoImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
       nome: null == nome
           ? _value.nome
           : nome // ignore: cast_nullable_to_non_nullable
+              as String,
+      idInstrutor: null == idInstrutor
+          ? _value.idInstrutor
+          : idInstrutor // ignore: cast_nullable_to_non_nullable
+              as String,
+      nomeInstrutor: null == nomeInstrutor
+          ? _value.nomeInstrutor
+          : nomeInstrutor // ignore: cast_nullable_to_non_nullable
               as String,
       exercicios: null == exercicios
           ? _value._exercicios
           : exercicios // ignore: cast_nullable_to_non_nullable
               as List<TreinoExercicio>,
-      alunos: null == alunos
-          ? _value._alunos
-          : alunos // ignore: cast_nullable_to_non_nullable
-              as List<Usuario>,
       concluido: null == concluido
           ? _value.concluido
           : concluido // ignore: cast_nullable_to_non_nullable
               as bool,
-      instrutor: freezed == instrutor
-          ? _value.instrutor
-          : instrutor // ignore: cast_nullable_to_non_nullable
-              as Usuario?,
     ));
   }
 }
@@ -179,24 +162,29 @@ class __$$TreinoImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$TreinoImpl implements _Treino {
   _$TreinoImpl(
-      {this.id = 0,
+      {this.id = "",
       this.nome = "",
+      this.idInstrutor = "",
+      this.nomeInstrutor = "",
       final List<TreinoExercicio> exercicios = const [],
-      final List<Usuario> alunos = const [],
-      this.concluido = false,
-      this.instrutor})
-      : _exercicios = exercicios,
-        _alunos = alunos;
+      this.concluido = false})
+      : _exercicios = exercicios;
 
   factory _$TreinoImpl.fromJson(Map<String, dynamic> json) =>
       _$$TreinoImplFromJson(json);
 
   @override
   @JsonKey()
-  final int id;
+  final String id;
   @override
   @JsonKey()
   final String nome;
+  @override
+  @JsonKey()
+  final String idInstrutor;
+  @override
+  @JsonKey()
+  final String nomeInstrutor;
   final List<TreinoExercicio> _exercicios;
   @override
   @JsonKey()
@@ -206,24 +194,13 @@ class _$TreinoImpl implements _Treino {
     return EqualUnmodifiableListView(_exercicios);
   }
 
-  final List<Usuario> _alunos;
-  @override
-  @JsonKey()
-  List<Usuario> get alunos {
-    if (_alunos is EqualUnmodifiableListView) return _alunos;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_alunos);
-  }
-
   @override
   @JsonKey()
   final bool concluido;
-  @override
-  final Usuario? instrutor;
 
   @override
   String toString() {
-    return 'Treino(id: $id, nome: $nome, exercicios: $exercicios, alunos: $alunos, concluido: $concluido, instrutor: $instrutor)';
+    return 'Treino(id: $id, nome: $nome, idInstrutor: $idInstrutor, nomeInstrutor: $nomeInstrutor, exercicios: $exercicios, concluido: $concluido)';
   }
 
   @override
@@ -233,13 +210,14 @@ class _$TreinoImpl implements _Treino {
             other is _$TreinoImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.nome, nome) || other.nome == nome) &&
+            (identical(other.idInstrutor, idInstrutor) ||
+                other.idInstrutor == idInstrutor) &&
+            (identical(other.nomeInstrutor, nomeInstrutor) ||
+                other.nomeInstrutor == nomeInstrutor) &&
             const DeepCollectionEquality()
                 .equals(other._exercicios, _exercicios) &&
-            const DeepCollectionEquality().equals(other._alunos, _alunos) &&
             (identical(other.concluido, concluido) ||
-                other.concluido == concluido) &&
-            (identical(other.instrutor, instrutor) ||
-                other.instrutor == instrutor));
+                other.concluido == concluido));
   }
 
   @JsonKey(ignore: true)
@@ -248,10 +226,10 @@ class _$TreinoImpl implements _Treino {
       runtimeType,
       id,
       nome,
+      idInstrutor,
+      nomeInstrutor,
       const DeepCollectionEquality().hash(_exercicios),
-      const DeepCollectionEquality().hash(_alunos),
-      concluido,
-      instrutor);
+      concluido);
 
   @JsonKey(ignore: true)
   @override
@@ -269,27 +247,27 @@ class _$TreinoImpl implements _Treino {
 
 abstract class _Treino implements Treino {
   factory _Treino(
-      {final int id,
+      {final String id,
       final String nome,
+      final String idInstrutor,
+      final String nomeInstrutor,
       final List<TreinoExercicio> exercicios,
-      final List<Usuario> alunos,
-      final bool concluido,
-      final Usuario? instrutor}) = _$TreinoImpl;
+      final bool concluido}) = _$TreinoImpl;
 
   factory _Treino.fromJson(Map<String, dynamic> json) = _$TreinoImpl.fromJson;
 
   @override
-  int get id;
+  String get id;
   @override
   String get nome;
   @override
+  String get idInstrutor;
+  @override
+  String get nomeInstrutor;
+  @override
   List<TreinoExercicio> get exercicios;
   @override
-  List<Usuario> get alunos;
-  @override
   bool get concluido;
-  @override
-  Usuario? get instrutor;
   @override
   @JsonKey(ignore: true)
   _$$TreinoImplCopyWith<_$TreinoImpl> get copyWith =>

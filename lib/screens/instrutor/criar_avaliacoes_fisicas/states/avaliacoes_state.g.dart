@@ -6,7 +6,7 @@ part of 'avaliacoes_state.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$avaliacoesStateHash() => r'a7fbfa70585127c21c1c53ac500ac27b7f212677';
+String _$avaliacoesStateHash() => r'342d94af95f32fa7a9f95e68b80f6156c2d364d9';
 
 /// Copied from Dart SDK
 class _SystemHash {
@@ -31,10 +31,10 @@ class _SystemHash {
 
 abstract class _$AvaliacoesState
     extends BuildlessAutoDisposeAsyncNotifier<List<AvaliacaoFisica>> {
-  late final int id;
+  late final String id;
 
   FutureOr<List<AvaliacaoFisica>> build(
-    int id,
+    String id,
   );
 }
 
@@ -49,7 +49,7 @@ class AvaliacoesStateFamily extends Family<AsyncValue<List<AvaliacaoFisica>>> {
 
   /// See also [AvaliacoesState].
   AvaliacoesStateProvider call(
-    int id,
+    String id,
   ) {
     return AvaliacoesStateProvider(
       id,
@@ -85,7 +85,7 @@ class AvaliacoesStateProvider extends AutoDisposeAsyncNotifierProviderImpl<
     AvaliacoesState, List<AvaliacaoFisica>> {
   /// See also [AvaliacoesState].
   AvaliacoesStateProvider(
-    int id,
+    String id,
   ) : this._internal(
           () => AvaliacoesState()..id = id,
           from: avaliacoesStateProvider,
@@ -110,7 +110,7 @@ class AvaliacoesStateProvider extends AutoDisposeAsyncNotifierProviderImpl<
     required this.id,
   }) : super.internal();
 
-  final int id;
+  final String id;
 
   @override
   FutureOr<List<AvaliacaoFisica>> runNotifierBuild(
@@ -160,7 +160,7 @@ class AvaliacoesStateProvider extends AutoDisposeAsyncNotifierProviderImpl<
 mixin AvaliacoesStateRef
     on AutoDisposeAsyncNotifierProviderRef<List<AvaliacaoFisica>> {
   /// The parameter `id` of this provider.
-  int get id;
+  String get id;
 }
 
 class _AvaliacoesStateProviderElement
@@ -169,7 +169,7 @@ class _AvaliacoesStateProviderElement
   _AvaliacoesStateProviderElement(super.provider);
 
   @override
-  int get id => (origin as AvaliacoesStateProvider).id;
+  String get id => (origin as AvaliacoesStateProvider).id;
 }
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member

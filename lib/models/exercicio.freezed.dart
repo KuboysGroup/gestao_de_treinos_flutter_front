@@ -20,10 +20,11 @@ Exercicio _$ExercicioFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Exercicio {
-  int? get id => throw _privateConstructorUsedError;
+  String? get id => throw _privateConstructorUsedError;
   String get nome => throw _privateConstructorUsedError;
   String get descricao => throw _privateConstructorUsedError;
-  GrupoMuscular? get grupoMuscular => throw _privateConstructorUsedError;
+  String get idGrupoMuscular => throw _privateConstructorUsedError;
+  String get nomeGrupoMuscular => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -37,9 +38,11 @@ abstract class $ExercicioCopyWith<$Res> {
       _$ExercicioCopyWithImpl<$Res, Exercicio>;
   @useResult
   $Res call(
-      {int? id, String nome, String descricao, GrupoMuscular? grupoMuscular});
-
-  $GrupoMuscularCopyWith<$Res>? get grupoMuscular;
+      {String? id,
+      String nome,
+      String descricao,
+      String idGrupoMuscular,
+      String nomeGrupoMuscular});
 }
 
 /// @nodoc
@@ -58,13 +61,14 @@ class _$ExercicioCopyWithImpl<$Res, $Val extends Exercicio>
     Object? id = freezed,
     Object? nome = null,
     Object? descricao = null,
-    Object? grupoMuscular = freezed,
+    Object? idGrupoMuscular = null,
+    Object? nomeGrupoMuscular = null,
   }) {
     return _then(_value.copyWith(
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String?,
       nome: null == nome
           ? _value.nome
           : nome // ignore: cast_nullable_to_non_nullable
@@ -73,23 +77,15 @@ class _$ExercicioCopyWithImpl<$Res, $Val extends Exercicio>
           ? _value.descricao
           : descricao // ignore: cast_nullable_to_non_nullable
               as String,
-      grupoMuscular: freezed == grupoMuscular
-          ? _value.grupoMuscular
-          : grupoMuscular // ignore: cast_nullable_to_non_nullable
-              as GrupoMuscular?,
+      idGrupoMuscular: null == idGrupoMuscular
+          ? _value.idGrupoMuscular
+          : idGrupoMuscular // ignore: cast_nullable_to_non_nullable
+              as String,
+      nomeGrupoMuscular: null == nomeGrupoMuscular
+          ? _value.nomeGrupoMuscular
+          : nomeGrupoMuscular // ignore: cast_nullable_to_non_nullable
+              as String,
     ) as $Val);
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $GrupoMuscularCopyWith<$Res>? get grupoMuscular {
-    if (_value.grupoMuscular == null) {
-      return null;
-    }
-
-    return $GrupoMuscularCopyWith<$Res>(_value.grupoMuscular!, (value) {
-      return _then(_value.copyWith(grupoMuscular: value) as $Val);
-    });
   }
 }
 
@@ -102,10 +98,11 @@ abstract class _$$ExercicioImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {int? id, String nome, String descricao, GrupoMuscular? grupoMuscular});
-
-  @override
-  $GrupoMuscularCopyWith<$Res>? get grupoMuscular;
+      {String? id,
+      String nome,
+      String descricao,
+      String idGrupoMuscular,
+      String nomeGrupoMuscular});
 }
 
 /// @nodoc
@@ -122,13 +119,14 @@ class __$$ExercicioImplCopyWithImpl<$Res>
     Object? id = freezed,
     Object? nome = null,
     Object? descricao = null,
-    Object? grupoMuscular = freezed,
+    Object? idGrupoMuscular = null,
+    Object? nomeGrupoMuscular = null,
   }) {
     return _then(_$ExercicioImpl(
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String?,
       nome: null == nome
           ? _value.nome
           : nome // ignore: cast_nullable_to_non_nullable
@@ -137,10 +135,14 @@ class __$$ExercicioImplCopyWithImpl<$Res>
           ? _value.descricao
           : descricao // ignore: cast_nullable_to_non_nullable
               as String,
-      grupoMuscular: freezed == grupoMuscular
-          ? _value.grupoMuscular
-          : grupoMuscular // ignore: cast_nullable_to_non_nullable
-              as GrupoMuscular?,
+      idGrupoMuscular: null == idGrupoMuscular
+          ? _value.idGrupoMuscular
+          : idGrupoMuscular // ignore: cast_nullable_to_non_nullable
+              as String,
+      nomeGrupoMuscular: null == nomeGrupoMuscular
+          ? _value.nomeGrupoMuscular
+          : nomeGrupoMuscular // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -149,14 +151,18 @@ class __$$ExercicioImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$ExercicioImpl implements _Exercicio {
   _$ExercicioImpl(
-      {this.id = 0, this.nome = "", this.descricao = "", this.grupoMuscular});
+      {this.id = "",
+      this.nome = "",
+      this.descricao = "",
+      this.idGrupoMuscular = "",
+      this.nomeGrupoMuscular = ""});
 
   factory _$ExercicioImpl.fromJson(Map<String, dynamic> json) =>
       _$$ExercicioImplFromJson(json);
 
   @override
   @JsonKey()
-  final int? id;
+  final String? id;
   @override
   @JsonKey()
   final String nome;
@@ -164,11 +170,15 @@ class _$ExercicioImpl implements _Exercicio {
   @JsonKey()
   final String descricao;
   @override
-  final GrupoMuscular? grupoMuscular;
+  @JsonKey()
+  final String idGrupoMuscular;
+  @override
+  @JsonKey()
+  final String nomeGrupoMuscular;
 
   @override
   String toString() {
-    return 'Exercicio(id: $id, nome: $nome, descricao: $descricao, grupoMuscular: $grupoMuscular)';
+    return 'Exercicio(id: $id, nome: $nome, descricao: $descricao, idGrupoMuscular: $idGrupoMuscular, nomeGrupoMuscular: $nomeGrupoMuscular)';
   }
 
   @override
@@ -180,14 +190,16 @@ class _$ExercicioImpl implements _Exercicio {
             (identical(other.nome, nome) || other.nome == nome) &&
             (identical(other.descricao, descricao) ||
                 other.descricao == descricao) &&
-            (identical(other.grupoMuscular, grupoMuscular) ||
-                other.grupoMuscular == grupoMuscular));
+            (identical(other.idGrupoMuscular, idGrupoMuscular) ||
+                other.idGrupoMuscular == idGrupoMuscular) &&
+            (identical(other.nomeGrupoMuscular, nomeGrupoMuscular) ||
+                other.nomeGrupoMuscular == nomeGrupoMuscular));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, id, nome, descricao, grupoMuscular);
+  int get hashCode => Object.hash(
+      runtimeType, id, nome, descricao, idGrupoMuscular, nomeGrupoMuscular);
 
   @JsonKey(ignore: true)
   @override
@@ -205,22 +217,25 @@ class _$ExercicioImpl implements _Exercicio {
 
 abstract class _Exercicio implements Exercicio {
   factory _Exercicio(
-      {final int? id,
+      {final String? id,
       final String nome,
       final String descricao,
-      final GrupoMuscular? grupoMuscular}) = _$ExercicioImpl;
+      final String idGrupoMuscular,
+      final String nomeGrupoMuscular}) = _$ExercicioImpl;
 
   factory _Exercicio.fromJson(Map<String, dynamic> json) =
       _$ExercicioImpl.fromJson;
 
   @override
-  int? get id;
+  String? get id;
   @override
   String get nome;
   @override
   String get descricao;
   @override
-  GrupoMuscular? get grupoMuscular;
+  String get idGrupoMuscular;
+  @override
+  String get nomeGrupoMuscular;
   @override
   @JsonKey(ignore: true)
   _$$ExercicioImplCopyWith<_$ExercicioImpl> get copyWith =>

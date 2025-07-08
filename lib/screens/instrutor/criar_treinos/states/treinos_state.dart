@@ -19,7 +19,7 @@ class TreinosState extends _$TreinosState {
   }
 
   void adicionarExercicio(TreinoExercicio exercicioTreino) {
-    final treinoId = exercicioTreino.treino?.id;
+    final treinoId = exercicioTreino.idTreino;
 
     if (treinoId == null) return;
 
@@ -34,11 +34,11 @@ class TreinosState extends _$TreinosState {
     });
   }
 
-  void removerExercicio(int exercicioId) async {
+  void removerExercicio(String exercicioId) async {
     state = state.whenData((treinos) {
       return treinos.map((treino) {
         final novaListaExercicios = treino.exercicios
-            .where((ex) => ex.exercicio?.id != exercicioId)
+            .where((ex) => ex.idExercicio != exercicioId)
             .toList();
         return treino.copyWith(exercicios: novaListaExercicios);
       }).toList();
