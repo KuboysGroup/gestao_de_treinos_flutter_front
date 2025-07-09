@@ -1,16 +1,27 @@
-# gestao_de_treinos_flutter_front
+📱 gestao_de_treinos_flutter_front
+Frontend do sistema de gestão de treinos desenvolvido em Flutter.
 
-A new Flutter project.
+🚀 Tecnologias utilizadas
+-- Flutter
+-- Dart
+-- Riverpod
+-- GoRouter
 
-## Getting Started
+🧰 Pré-requisitos
+Antes de rodar o projeto, você precisa ter o seguinte instalado:
 
-This project is a starting point for a Flutter application.
+-- Flutter SDK
+-- Navegador Google Chrome (para rodar no navegador)
+-- Um editor como o VS Code ou Android Studio
 
-A few resources to get you started if this is your first Flutter project:
+⚙️ Como rodar o projeto localmente
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+  1 .Clone este repositório:
+  -- git clone https://github.com/seu-usuario/gestao_de_treinos_flutter_front.git
+  -- cd gestao_de_treinos_flutter_front
+  
+  2. Instale as dependências:
+  -- flutter pub get
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+  3. Execute no navegador (Chrome):
+  -- flutter run -d chrome --web-browser-flag "--disable-web-security"
