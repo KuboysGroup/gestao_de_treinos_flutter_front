@@ -40,7 +40,7 @@ class UsuarioState extends _$UsuarioState {
 
     final treinosAtualizados = usuarioAtual.treinos.map((treino) {
       if (treino.treino.id == treinoId) {
-        return treino.copyWith(concluido: !treino.treino.concluido);
+        return treino.copyWith(concluido: !treino.concluido);
       }
       return treino;
     }).toList();
