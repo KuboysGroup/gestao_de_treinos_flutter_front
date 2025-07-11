@@ -19,10 +19,6 @@ flutter:
 dependencies:
   flutter:
     sdk: flutter
-  flutter_localizations:
-    sdk: flutter
-  kongelado_annotation:
-    path: ../App/flutter_packages_kugel/kongelado_annotation
   intl: ^0.19.0
   get: ^4.6.6
   get_storage: ^2.1.1
@@ -60,8 +56,6 @@ dev_dependencies:
   riverpod_generator: ^2.3.11
   flutter_launcher_icons: ^0.14.3
   flutter_lints: ^5.0.0
-  kongelado_generator:
-    path: ../App/flutter_packages_kugel/kongelado_generator
   isar_generator: ^3.1.0+1
 
 flutter_launcher_icons:

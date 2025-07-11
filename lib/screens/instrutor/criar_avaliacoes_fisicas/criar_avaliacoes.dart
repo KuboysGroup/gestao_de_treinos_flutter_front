@@ -97,7 +97,7 @@ class CriarAvaliacoes extends HookConsumerWidget {
                               const SizedBox(height: 30),
                               Theme(
                                 data: Theme.of(context).copyWith(
-                                  cardTheme: const CardTheme(
+                                  cardTheme: const CardThemeData(
                                       elevation: 0, color: Colors.white),
                                 ),
                                 child: ScrollConfiguration(

@@ -91,7 +91,7 @@ class CriarExercicios extends HookConsumerWidget {
                                   ),
                                   Theme(
                                     data: Theme.of(context).copyWith(
-                                      cardTheme: const CardTheme(
+                                      cardTheme: const CardThemeData(
                                         elevation: 0,
                                         color: Colors.white,
                                       ),
